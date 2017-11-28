@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'companies#index', as: 'dashboard'
   get '/new/company', to: 'companies#new', as: 'add_company'
   post '/new/company', to: 'companies#create'
+  get '/company/:id', to: 'companies#show', as: 'company'
   get '/companies/:user_id', to: 'companies#chart'
 
   get '/profile', to: 'profiles#index', as: 'my_profile'
