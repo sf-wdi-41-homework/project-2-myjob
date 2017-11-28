@@ -15,6 +15,11 @@ Rails.application.routes.draw do
   post '/new/company', to: 'companies#create'
   get '/company/:id', to: 'companies#show', as: 'company'
   get '/companies/:user_id', to: 'companies#chart'
+  get '/company/:id/edit', to: 'companies#edit', as: 'edit_company'
+  put 'company/:id', to: 'companies#update'
+  patch 'company/:id', to: 'companies#update'
+  delete 'company/:id', to: 'companies#destroy'
+
 
   get '/profile', to: 'profiles#index', as: 'my_profile'
   get '/new/profile', to: 'profiles#new'
