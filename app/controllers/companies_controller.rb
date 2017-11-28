@@ -34,4 +34,27 @@ class CompaniesController < ApplicationController
       format.json {render :json => @company}
     end
   end
+
+  def edit
+  end
+
+  def update
+    if @company.update(company_params)
+      flash[:success] = "#{@company.company_name} status updated"
+      redirect_to dashboard_path
+    else
+      flash[:error] = "Update failed please try again"
+      redirect_to edit_company_path
+    end
+  end
+
+  def destroy
+    if @company.destroy
+      flash[:success] = "#{@company.company_name} has been deleted from your list"
+      redirect_to dashboard_path
+    else
+      flash[:error] = "Delete failed please try again"
+      redirect_to company_path
+    end
+  end
 end
