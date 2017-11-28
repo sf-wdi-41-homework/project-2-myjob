@@ -1,25 +1,17 @@
 class ProfilesController < ApplicationController
   before_action :profile_params_id, only: [:update, :edit, :destroy]
+  before_action :authentication
+
 
   def index
-    if !current_user
-      flash[:error] = "Please Login!"
-      redirect_to root_path
+    if current_user.profile
+      @profile = current_user.profile
     else
-      if current_user.profile
-        @profile = current_user.profile
-      else
-        redirect_to new_profile_path
-      end
+      redirect_to new_profile_path
     end
   end
 
   def new
-    if !current_user
-      flash[:error] = "Please Login!"
-      redirect_to root_path
-    else
-    end
   end
 
   def edit

@@ -1,23 +1,17 @@
 class CompaniesController < ApplicationController
+  before_action :company_params_id, only: [:update, :show, :edit, :destroy]
+  before_action :authentication
+
+
   def index
-    if !current_user
-      flash[:error] = "Please Login!"
-      redirect_to root_path
-    else
-      if current_user.profile == nil
-        flash[:error] = "You have a empty profile please update it"
-      end
-      @companies = current_user.companies.all
+    if current_user.profile == nil
+      flash[:error] = "You have a empty profile please update it"
     end
+    @companies = current_user.companies.all
   end
 
   def new
-    if !current_user
-      flash[:error] = "Please Login!"
-      redirect_to root_path
-    else
-      @company = Company.new
-    end
+    @company = Company.new
   end
 
   def create
@@ -29,6 +23,9 @@ class CompaniesController < ApplicationController
       flash[:error] = "Sorry something went wrong"
       redirect_to add_company_path
     end
+  end
+
+  def show
   end
 
   def chart

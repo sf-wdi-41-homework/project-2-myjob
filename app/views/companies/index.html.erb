@@ -38,7 +38,9 @@
     <div class="row" style="height:7vh;">
       <div class="col-xs-2">
         <h4>
-          <%= company.company_name%>
+          <%=link_to company_path(company.id) do%>
+            <%= company.company_name%>
+          <%end%>
         </h4>
       </div>
       <%if company.progress == "Resume Sent"%>
