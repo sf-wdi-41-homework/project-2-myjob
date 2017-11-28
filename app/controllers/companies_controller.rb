@@ -30,4 +30,11 @@ class CompaniesController < ApplicationController
       redirect_to add_company_path
     end
   end
+
+  def chart
+    @company = Company.find_by_user_id(params[:user_id])
+    respond_to do |format|
+      format.json {render :json => @company}
+    end
+  end
 end
