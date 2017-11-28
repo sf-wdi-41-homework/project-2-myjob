@@ -32,7 +32,7 @@ class CompaniesController < ApplicationController
   end
 
   def chart
-    @company = Company.find_by_user_id(params[:user_id])
+    @company = Company.where("user_id = #{current_user.id}")
     respond_to do |format|
       format.json {render :json => @company}
     end
