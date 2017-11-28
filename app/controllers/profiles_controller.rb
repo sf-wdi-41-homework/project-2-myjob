@@ -17,7 +17,6 @@ class ProfilesController < ApplicationController
       flash[:error] = "Please Login!"
       redirect_to root_path
     else
-      @profile = Profile.new
     end
   end
 
@@ -29,6 +28,17 @@ class ProfilesController < ApplicationController
     else
       flash[:error] = "Please try again"
       redirect_to new_profile_path
+    end
+  end
+
+  def update
+    @profile = Profile.find_by_user_id(current_user.id)
+    if @profile.update(profile_params)
+      flash[:success] = "Successfully updated profile!"
+      redirect_to my_profile_path
+    else
+      flash[:error] = "Update failed"
+      redirect_to my_profile_path
     end
   end
 end
