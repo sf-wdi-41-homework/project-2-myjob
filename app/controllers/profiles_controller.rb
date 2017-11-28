@@ -1,4 +1,6 @@
 class ProfilesController < ApplicationController
+  before_action :profile_params_id, only: [:update, :edit, :destroy]
+
   def index
     if !current_user
       flash[:error] = "Please Login!"
@@ -20,6 +22,10 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def edit
+
+  end
+
   def create
     @profile = Profile.new(profile_params)
     if current_user.profile = @profile
@@ -32,7 +38,6 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    @profile = Profile.find_by_user_id(current_user.id)
     if @profile.update(profile_params)
       flash[:success] = "Successfully updated profile!"
       redirect_to my_profile_path

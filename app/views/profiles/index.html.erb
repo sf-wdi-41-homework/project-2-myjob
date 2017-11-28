@@ -1,6 +1,7 @@
 <div class="container">
   <div class="col-xs-10 col-xs-offset-1">
     <div class="col-xs-3">
+      <%= link_to "edit", profile_path(@profile.id)%>
       <h2><%=@profile.full_name%></h2>
       <h4><%=@profile.phone_number%></h4>
       <h4><%=@profile.email%></h4>
