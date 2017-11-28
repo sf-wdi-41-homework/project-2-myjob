@@ -15,11 +15,23 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- favicon -->
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="16x16">
   </head>
 
   <body>
-    <li ><%= link_to "Create Account", signup_path, class:"nav-link"%></li>
-    <li ><%= link_to "Log In", "/login", class:"nav-link"%></li>
+    <%= render "/layouts/nav" %>
+    <% flash.each do |name, msg| %>
+      <% if name == "success" %>
+        <p class="alert alert-success">
+      <% else %>
+        <p class="alert alert-danger">
+      <% end %>
+        <strong> <%= name.capitalize %>: <%= msg %> </strong>
+      </p>
+    <% end %>
+
 
     <%= yield %>
   </body>

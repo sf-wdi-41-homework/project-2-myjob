@@ -1,0 +1,17 @@
+nav {
+  background-color: black;
+}
+
+li a {
+  color: white;
+}
+
+.progress_bar {
+  background-color: palegreen;
+  height: 5vh;
+}
+
+.sorry {
+  background-color: black;
+  height: 5vh;
+}

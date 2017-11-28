@@ -6,15 +6,16 @@ class SessionsController < ApplicationController
   def create
     # confirm that email/password combination is correct
     @user = User.find_by_username(login_params[:username])
-    puts "user: #{@user.username}"
-    puts "11111111111111111111#{login_params}"
 
     if @user && @user.authenticate(login_params[:password])
       login(@user)
-      flash[:success] = "Successfully logged in."      # <--- Add this flash notice
+      flash[:success] = "Successfully logged in."
+      puts (@current_user.username)     # <--- Add this flash notice
       # redirect_to show_user_path(@user[:id])
-      redirect_to root_path
+      redirect_to dashboard_path
     else
+      flash[:success] = "Invalid username or password"      # <--- Add this flash notice
+
       redirect_to login_path
     end
 	end
