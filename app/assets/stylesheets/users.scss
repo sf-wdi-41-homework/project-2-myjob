@@ -1,6 +1,6 @@
 .jumbotron {
 width: 100%;
-opacity: 0.4;
+opacity: 0.3;
 padding: 0px;
 margin:0px;
 background-color:#d5d5d5;
@@ -34,28 +34,29 @@ text-align: center;
 .top-left {
  	font-family: 'PT Mono', monospace; 
     position: absolute;
-    top: 145px;
-    left: 100px;
+    top: 23%;
+    left: 10%;
 }
 
 .top-middle {
     font-family: 'PT Mono', monospace; 
     position: absolute;
-    top: 215px;
-    left: 270px;
+    top: 36%;
+    left: 21%;
 }
 
 .title{
 	font-family: 'PT Mono', monospace; 
-	font-size: 560%;
+	font-size: 8vw;
 	font-weight: bold;
 }
 
 .top-right {
 	font-family: 'PT Mono', monospace; 
     position: absolute;
-    top: 170px;
-    left: 850px;
+    top: 33%;
+    left: 60%;
+
 }
 
 .words {
