@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get '/company/:id', to: 'companies#show', as: 'company'
   get '/companies/:user_id', to: 'companies#chart'
   get '/company/:id/edit', to: 'companies#edit', as: 'edit_company'
-  put 'company/:id', to: 'companies#update'
+  put 'company/:id', to: 'companies#update', as:'update_company'
   patch 'company/:id', to: 'companies#update'
   delete 'company/:id', to: 'companies#destroy'
 
