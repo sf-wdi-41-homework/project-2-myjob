@@ -15,8 +15,9 @@ $( document ).ready(function() {
     //       		<input type="submit" name="commit" value="Submit" class="btn-sm btn-primary" data-disable-with="Submit">
     //       </div>
     //     </form>`)
-    $('.progress_change select').on('click', function(){
+    $('.progress_change select').on('change', function(event){
       let div = $(this).parent()
       div.parent('form').submit()
+      
     })
   });
