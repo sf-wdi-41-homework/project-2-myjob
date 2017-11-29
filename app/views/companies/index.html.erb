@@ -1,5 +1,6 @@
 <div class="col-xs-8 col-xs-offset-2">
-  <%= link_to "New Company", add_company_path%>
+  <%= link_to "New Company", companies_path%>
+  <%=render "chart"%>
   <div class="row">
     <div class="col-xs-2">
       <h3>
@@ -62,11 +63,11 @@
       <div class="col-xs-9 text-center sorry" >
       </div>
       <%end%>
-      <div class="col-xs-1">
-        <%=link_to edit_company_path(company.id) do%>
-          <span class="glyphicon glyphicon-pencil"></span>
+      <div class="col-xs-1 progress_change">
+        <%=link_to edit_company_path(company.id), class:"progress_icon", id: "progress_edit",remote: true do%>
+          <span class=" glyphicon glyphicon-pencil"></span>
         <%end%>
-        <%=link_to company_path(company.id), method: :delete do%>
+        <%=link_to company_path(company.id), method: :delete, class:"progress_icon", id: "progress_delete",remote: true do%>
           <span class="glyphicon glyphicon-trash"></span>
         <%end%>
       </div>
