@@ -36,10 +36,6 @@ class CompaniesController < ApplicationController
   end
 
   def edit
-    # respond_to do |format|
-    #   format.js {render "form"}
-    #   format.html
-    # end
   end
 
   def update

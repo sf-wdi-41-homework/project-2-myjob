@@ -1,0 +1,98 @@
+<%@companies.each do |company|%>
+  <div class="row" style="height:7vh;">
+    <div class="col-xs-2">
+      <h4>
+        <%=link_to company_path(company.id) do%>
+          <%= company.company_name%>
+        <%end%>
+      </h4>
+    </div>
+    <%if company.progress == "Resume Sent"%>
+    <div class="col-xs-1 text-center progress_bar" >
+    </div>
+    <div class="col-xs-4">
+    </div>
+    <div class="col-xs-5">
+      <%= form_with scope: :companies, url: update_company_path(company.id), method: :put, class: "progress_change form-horizontal float-left", remote: true do |form| %>
+        <div class="form-group">
+            <%= form.select :progress, ['Resume Sent', 'Screen', 'Interview', 'Negotiation', 'Completed'] %>
+            <%=link_to company_path(company.id), method: :delete, class:"progress_icon", id: "progress_delete",remote: true do%>
+              <span class="glyphicon glyphicon-trash"></span>
+            <%end%>
+        </div>
+      <% end %>
+    </div>
+    <%elsif company.progress == "Screen"%>
+    <div class="col-xs-2 text-center progress_bar" >
+    </div>
+    <div class="col-xs-3">
+    </div>
+    <div class="col-xs-5">
+      <%= form_with scope: :companies, url: update_company_path(company.id), method: :put, class: "progress_change form-horizontal float-left", remote: true do |form| %>
+        <div class="form-group">
+            <%= form.select :progress, options_for_select(['Resume Sent', ['Screen', {selected: "selected"}], 'Interview', 'Negotiation', 'Completed']) %>
+            <%=link_to company_path(company.id), method: :delete, class:"progress_icon", id: "progress_delete",remote: true do%>
+              <span class="glyphicon glyphicon-trash"></span>
+            <%end%>
+        </div>
+      <% end %>
+    </div>
+    <%elsif company.progress == "Interview"%>
+    <div class="col-xs-3 text-center progress_bar" >
+    </div>
+    <div class="col-xs-2">
+    </div>
+    <div class="col-xs-5">
+      <%= form_with scope: :companies, url: update_company_path(company.id), method: :put, class: "progress_change form-horizontal float-left", remote: true do |form| %>
+        <div class="form-group">
+            <%= form.select :progress, options_for_select(['Resume Sent', 'Screen', ['Interview', {selected: "selected"}], 'Negotiation', 'Completed']) %>
+            <%=link_to company_path(company.id), method: :delete, class:"progress_icon", id: "progress_delete",remote: true do%>
+              <span class="glyphicon glyphicon-trash"></span>
+            <%end%>
+        </div>
+      <% end %>
+    </div>
+    <%elsif company.progress == "Negotiation"%>
+    <div class="col-xs-4 text-center progress_bar" >
+    </div>
+    <div class="col-xs-1">
+    </div>
+    <div class="col-xs-5">
+      <%= form_with scope: :companies, url: update_company_path(company.id), method: :put, class: "progress_change form-horizontal float-left", remote: true do |form| %>
+        <div class="form-group">
+            <%= form.select :progress, options_for_select(['Resume Sent', 'Screen', 'Interview', ['Negotiation', {selected: "selected"}], 'Completed']) %>
+            <%=link_to company_path(company.id), method: :delete, class:"progress_icon", id: "progress_delete",remote: true do%>
+              <span class="glyphicon glyphicon-trash"></span>
+            <%end%>
+        </div>
+      <% end %>
+    </div>
+    <%elsif company.progress == "Completed"%>
+    <div class="col-xs-5 text-center progress_bar" >
+    </div>
+    <div class="col-xs-5">
+      <%= form_with scope: :companies, url: update_company_path(company.id), method: :put, class: "progress_change form-horizontal float-left", remote: true do |form| %>
+        <div class="form-group">
+            <%= form.select :progress, options_for_select(['Resume Sent', 'Screen', 'Interview', 'Negotiation', ['Completed', {selected: "selected"}]]) %>
+            <%=link_to company_path(company.id), method: :delete, class:"progress_icon", id: "progress_delete",remote: true do%>
+              <span class="glyphicon glyphicon-trash"></span>
+            <%end%>
+        </div>
+      <% end %>
+    </div>
+    <%else%>
+    <div class="col-xs-5 text-center sorry" >
+    </div>
+    <div class="col-xs-5">
+      <%= form_with scope: :companies, url: update_company_path(company.id), method: :put, class: "progress_change form-horizontal float-left", remote: true do |form| %>
+        <div class="form-group">
+            <%= form.select :progress, ['Resume Sent', 'Screen', 'Interview', 'Negotiation', 'Completed'] %>
+            <%=link_to company_path(company.id), method: :delete, class:"progress_icon", id: "progress_delete",remote: true do%>
+              <span class="glyphicon glyphicon-trash"></span>
+            <%end%>
+        </div>
+      <% end %>
+    </div>
+    <%end%>
+  </div>
+<%end%>
