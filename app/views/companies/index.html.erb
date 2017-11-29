@@ -1,7 +1,8 @@
-<div class="col-xs-8 col-xs-offset-2">
+<div class="col-xs-10 col-xs-offset-1">
   <%= link_to "New Company", companies_path%>
-  <%=render "chart"%>
-  <div class="row">
+
+  
+  <div class="row" id="stat">
     <div class="col-xs-2">
       <h5>
         Company
@@ -32,8 +33,10 @@
         Completed
       </h5>
     </div>
+
     <div class="col-xs-5">
     </div>
   </div>
   <%=render 'progress'%>
+
 </div>
