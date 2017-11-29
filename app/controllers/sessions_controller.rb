@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
       # redirect_to show_user_path(@user[:id])
       redirect_to dashboard_path
     else
-      flash[:success] = "Invalid username or password"      # <--- Add this flash notice
+      flash[:error] = "Invalid username or password"      # <--- Add this flash notice
 
       redirect_to login_path
     end
