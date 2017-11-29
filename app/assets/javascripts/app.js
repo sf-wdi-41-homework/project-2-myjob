@@ -57,7 +57,7 @@ $(document).ready(function() {
         		histogram: {bucketSize: 1},
           		title: 'Company Updates Per Day (mouse over)',
           		legend: { position: 'none' },
-          		hAxis: {format: '####'},
+          		hAxis: {textPosition: 'none'},
         	};
 
         	var chart = new google.visualization.Histogram(document.getElementById('progress_chart'));
