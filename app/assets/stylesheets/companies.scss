@@ -1,5 +1,19 @@
-#stat{
+#stat,#company, #tasks{
 	background-color: #b3b3b3;
-	border-bottom: 2px solid #d5d5d5;
+	border: 1px solid black;
 
+}
+
+
+
+#tasks, {
+	height: 42vh;   
+    overflow-y: auto;    
+    overflow-x: hidden; 
+}
+
+#company{ 
+	height: 42vh;   
+    overflow-y: auto;    
+    overflow-x: hidden; 
 }
