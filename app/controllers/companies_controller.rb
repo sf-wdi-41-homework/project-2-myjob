@@ -20,12 +20,15 @@ class CompaniesController < ApplicationController
       flash[:success] = "Congratz on applying to a new company!"
       redirect_to dashboard_path
     else
-      flash[:error] = "Sorry something went wrong"
-      redirect_to add_company_path
+      flash[:error] = @company.errors.full_messages[0]
+      redirect_to companies_path
     end
   end
 
   def show
+    if @company.contact1 == nil || @company.contact2 == nil || @company.contact3 == nil
+      flash[:error] = "Contacts missing for #{@company.company_name}"
+    end
   end
 
   def chart
