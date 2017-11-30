@@ -3,10 +3,11 @@
 <div class="col-xs-8 col-xs-offset-2">
   <%= link_to "New Company", companies_path%>
   <%= link_to "New Task", tasks_path%>
-  <%=render "chart"%>
-  <%=render 'progress'%>
+  <!-- <%=render "chart"%> -->
+  <%= column_chart Company.where("user_id = #{current_user.id}").group_by_day(:created_at).count %>
 </div>
 </div>
+<%=render 'progress'%>
 
 
 <div class="row">
