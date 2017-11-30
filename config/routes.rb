@@ -32,6 +32,11 @@ Rails.application.routes.draw do
   patch '/profile/:id', to: 'profiles#update'
 
   # User Tasks
-  get '/my/new/tasks', to: 'tasks#new', as: 'tasks'
-  post '/my/new/tasks', to: 'tasks#create'
+  get '/my/new/task', to: 'tasks#new', as: 'tasks'
+  post '/my/new/task', to: 'tasks#create'
+  get '/my/task/:id/edit', to: 'tasks#edit', as: 'task_edit'
+  put '/my/task/:id', to: 'tasks#update', as: 'task'
+  patch '/my/task/:id', to: 'tasks#update'
+  delete '/my/task/:id', to: 'tasks#destroy'
+
 end
