@@ -47,7 +47,7 @@
     <div class="col-xs-4">
     </div>
     <div class="col-xs-5">
-      <%= form_with scope: :companies, url: update_company_path(company.id), method: :put, class: "progress_change form-horizontal float-left", remote: true do |form| %>
+      <%= form_with scope: :companies, url: update_company_path(company.id), method: :put, class: "progress_change form-horizontal float-left" do |form| %>
         <div class="form-group">
             <%= form.select :progress, ['Resume Sent', 'Screen', 'Interview', 'Negotiation', 'Completed'] %>
             <%=link_to company_path(company.id), method: :delete, class:"progress_icon", id: "progress_delete",remote: true do%>
