@@ -1,39 +1,26 @@
+<div class="container-fluid">
+<div class="row">
 <div class="col-xs-8 col-xs-offset-2">
   <%= link_to "New Company", companies_path%>
-  <!-- <%=render "chart"%> -->
-  <div class="row">
-    <div class="col-xs-2">
-      <h5>
-        Company
-      </h5>
-    </div>
-    <div class="col-xs-1">
-      <h5>
-        Resume Sent
-      </h5>
-    </div>
-    <div class="col-xs-1">
-      <h5>
-        Screen
-      </h5>
-    </div>
-    <div class="col-xs-1">
-      <h5>
-        Interview
-      </h5>
-    </div>
-    <div class="col-xs-1">
-      <h5>
-        Negotiation
-      </h5>
-    </div>
-    <div class="col-xs-1">
-      <h5>
-        Completed
-      </h5>
-    </div>
-    <div class="col-xs-5">
-    </div>
-  </div>
+  <%= link_to "New Task", tasks_path%>
+  <%=render "chart"%>
   <%=render 'progress'%>
+</div>
+</div>
+
+
+<div class="row">
+<div class="col-xs-10 col-xs-offset-1">
+<%current_user.tasks.each do |task|%>
+  <h1><%=task.subject%></h1>
+  <p><%=task.details%></p>
+  <%=link_to task_edit_path(task.id) do%>
+    <span class="glyphicon glyphicon-pencil"></span>
+  <%end%>
+  <%=link_to task_path(task.id), method: :delete do%>
+    <span class="glyphicon glyphicon-trash"></span>
+  <%end%>
+<%end%>
+</div>
+</div>
 </div>

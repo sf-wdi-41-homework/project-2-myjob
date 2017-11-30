@@ -4,5 +4,6 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include CompaniesHelper
   include ProfilesHelper
+  include TasksHelper
 
 end

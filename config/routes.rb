@@ -2,14 +2,17 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'users#index'
 
+  # User Signup
   get '/', to:'users#index', as: 'home'
   get '/signup', to:'users#new', as: 'signup'
   post '/signup', to:'users#create'
 
+  # User Login
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
+  # User Dashboard/Company Applying to
   get '/dashboard', to: 'companies#index', as: 'dashboard'
   get '/new/company', to: 'companies#new', as: 'companies'
   post '/new/company', to: 'companies#create'
@@ -20,7 +23,7 @@ Rails.application.routes.draw do
   patch 'company/:id', to: 'companies#update'
   delete 'company/:id', to: 'companies#destroy'
 
-
+  # User Profile
   get '/profile', to: 'profiles#index', as: 'my_profile'
   get '/new/profile', to: 'profiles#new'
   post '/new/profile', to: 'profiles#create'
@@ -28,5 +31,12 @@ Rails.application.routes.draw do
   put '/profile/:id', to: 'profiles#update'
   patch '/profile/:id', to: 'profiles#update'
 
+  # User Tasks
+  get '/my/new/task', to: 'tasks#new', as: 'tasks'
+  post '/my/new/task', to: 'tasks#create'
+  get '/my/task/:id/edit', to: 'tasks#edit', as: 'task_edit'
+  put '/my/task/:id', to: 'tasks#update', as: 'task'
+  patch '/my/task/:id', to: 'tasks#update'
+  delete '/my/task/:id', to: 'tasks#destroy'
 
 end

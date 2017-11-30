@@ -41,7 +41,10 @@ class CompaniesController < ApplicationController
   def update
     if @company.update(company_params)
       flash[:success] = "#{@company.company_name} status updated"
-      redirect_to dashboard_path
+      respond_to do |format|
+        format.html{redirect_to dashboard_path}
+        format.json {render :json =>@company}
+      end
     else
       flash[:error] = "Update failed please try again"
       redirect_to edit_company_path

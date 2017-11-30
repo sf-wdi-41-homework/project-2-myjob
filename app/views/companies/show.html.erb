@@ -7,3 +7,10 @@
 <%=@company.contact1%> </br>
 <%=@company.contact2%> </br>
 <%=@company.contact3%> </br>
+<h2> Task List</h2>
+<%current_user.tasks.each do |task|%>
+  <%if task.company == @company.company_name%>
+    <h4><%=task.subject%></h4>
+    <p><%=task.details%></p>
+  <%end%>
+<%end%>

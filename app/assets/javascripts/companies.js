@@ -1,5 +1,6 @@
 $( document ).ready(function() {
     console.log("jquery working")
+
     // $('.progress_icon').on('click', function(){
     //   $('.progress_icon').hide()
     //   $('.progress_change').append(`
@@ -15,9 +16,13 @@ $( document ).ready(function() {
     //       		<input type="submit" name="commit" value="Submit" class="btn-sm btn-primary" data-disable-with="Submit">
     //       </div>
     //     </form>`)
-    $('.progress_change select').on('change', function(event){
-      let div = $(this).parent()
-      div.parent('form').submit()
-      
+
+
+
+    $('.progress_change').on('change', function(e){
+      e.preventDefault()
+      console.log($(this).attr('id'))
+      $(this).submit()
     })
+
   });
