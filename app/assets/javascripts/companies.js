@@ -1,5 +1,3 @@
-$( document ).ready(function() {
-    console.log("jquery working")
 
     // $('.progress_icon').on('click', function(){
     //   $('.progress_icon').hide()
@@ -19,10 +17,13 @@ $( document ).ready(function() {
 
 
 
-    $('.progress_change').on('change', function(e){
+
+$(document).on('turbolinks:load',function(){
+  $('.progress_change').on('change', function(e){
       e.preventDefault()
       console.log($(this).attr('id'))
       $(this).submit()
-    })
+    });
+  }
+)
 
-  });

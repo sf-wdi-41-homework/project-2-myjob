@@ -7,7 +7,7 @@ class CompaniesController < ApplicationController
     if current_user.profile == nil
       flash[:error] = "You have a empty profile please update it"
     end
-    @companies = current_user.companies.all
+    @companies = current_user.companies.all.sort_by {|company| company[:company_name]}
   end
 
   def new
