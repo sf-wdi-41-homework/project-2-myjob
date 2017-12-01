@@ -4,18 +4,44 @@ h1,h2,h3 {
 
 nav {
   background-color: black;
+  font-family: 'Ubuntu', monospace;
+}
 
+footer {
+  background-color: black;
+  text-align: center;
+}
 
+.quotes h3 {
+	text-align: left;
+	font-family: 'Ubuntu', monospace;
+}
 
+.salesPitch h2 {
+	text-align: center;
+	background-color: #FFE4B5;
+/*	font-family: 'Ubuntu', monospace; */
+}
+
+#footer-text {
+	color: white;
+	margin: 15px;
+}
+
+body, p {
+	font-family: 'Ubuntu', monospace;
 }
 
 li a {
   color: white;
+}
 
+li:not(:last-child) {
+    margin-bottom: 5px;
 }
 
 .progress_bar {
-  background-color: palegreen;
+  background-color: lightblue;
   height: 5vh;
 }
 
