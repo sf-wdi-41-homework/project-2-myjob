@@ -1,4 +1,4 @@
-h1,h2,h3 {
+h1,h2,h3,h4 {
 	font-family: 'PT Mono', monospace; 
 }
 
@@ -30,6 +30,7 @@ footer {
 
 body, p {
 	font-family: 'Ubuntu', monospace;
+
 }
 
 li a {
@@ -48,5 +49,10 @@ li:not(:last-child) {
 .sorry {
   background-color: black;
   height: 5vh;
+}
+
+body {
+  background-color: #efefef;
+
 }
 
