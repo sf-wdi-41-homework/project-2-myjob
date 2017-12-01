@@ -1,3 +1,20 @@
 // Place all the styles related to the about controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.portrait {
+/*	height: 230px; */
+	border-radius: 20%;
+}
+
+.abouttext {
+	font-size: 24px;	
+	font-family: 'Ubuntu', monospace;
+	margin: 15px;
+}
+
+.biotext {
+	font-size: 20px;
+	font-family: 'Ubuntu', monospace;
+	margin-top: 15px;
+}
