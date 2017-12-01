@@ -41,7 +41,7 @@ li:not(:last-child) {
 }
 
 .progress_bar {
-  background-color: lightblue;
+  background-color: #7b99c1;
   height: 5vh;
 }
 

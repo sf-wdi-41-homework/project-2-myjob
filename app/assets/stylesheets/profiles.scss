@@ -1,4 +1,5 @@
-#name,h1 {
+
+#name,#dashboard, h1 {
   font-family: 'PT Mono', monospace;
 	color:white;
 	background-color:#add8f6;
@@ -27,7 +28,29 @@
 	padding:40px 0px;
 	font-size: 1.5vw;
 /*	text-shadow: 2px 2px black;    */
+
+	
+}
+
+#square, #envelope, #card {
+	text-align:center;
+
+}
+
+#avatar{
+	background-color: white;
+	border: 2px solid #efefef;
+	padding-bottom: 250px;
+	margin-top: 100px;
 	box-shadow: 1px 1px 3px #b3b3b3;
+}
+
+#linkedin{
+	background-color: white;
+	border: 2px solid #efefef;
+	padding-bottom: 250px;
+	margin-top: 100px;
+	box-shadow: 1px 1px 1px #b3b3b3;
 }
 
 .profileField {
@@ -52,7 +75,7 @@
 }
 
 #address {
-	background-image: url("/address.jpg");
+	background-image: url("/light.jpg");
     background-repeat: no-repeat;
     background-size: auto;
 /*    opacity: 0.3;  */
@@ -79,4 +102,11 @@
 	padding-bottom: 50px;
 	margin-top: 50px;
 	box-shadow: 1px 1px 1px #b3b3b3;
+  background-position: center middle; 
+  opacity: 0.6;
+
+}
+
+#dashboard{
+	margin-bottom: 10px;
 }
