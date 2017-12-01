@@ -1,5 +1,5 @@
-h1,h2,h3 {
-	font-family: 'PT Mono', monospace;
+h1,h2,h3,h4 {
+	font-family: 'PT Mono', monospace; 
 }
 
 nav {
@@ -31,6 +31,7 @@ footer {
 
 body, p {
 	font-family: 'Ubuntu', monospace;
+
 }
 
 li a {
@@ -50,3 +51,22 @@ li:not(:last-child) {
   background-color: black;
   height: 5vh;
 }
+
+body {
+  background-color: #efefef;
+
+}
+
+#dashboard {
+  font-family: 'PT Mono', monospace;
+    color:white;
+    text-align:center;
+    font-weight:bolder;
+    font-size: 4vw;
+    text-shadow: 2px 2px black;  
+    background-image: url("/jumbotron.jpg"); 
+    background-position: center center; 
+    opacity: 0.5; 
+    box-shadow: 1px 1px 3px #b3b3b3;
+}
+
