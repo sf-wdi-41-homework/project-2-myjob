@@ -39,4 +39,10 @@ Rails.application.routes.draw do
   patch '/my/task/:id', to: 'tasks#update'
   delete '/my/task/:id', to: 'tasks#destroy'
 
+  #File Upload and Download
+  get '/profile/document/upload', to: 'documents#new', as: "documents"
+  post '/profile/document/upload', to: 'documents#create'
+  get '/profile/document/download/:id', to: 'documents#show', as:"document_download"
+  delete '/profile/document/download/:id', to: 'documents#destroy'
+
 end

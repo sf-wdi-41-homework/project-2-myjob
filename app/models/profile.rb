@@ -1,5 +1,6 @@
 class Profile < ApplicationRecord
   belongs_to :user
+  has_many :documents
   validates :full_name,  presence:true
   validates :email, presence:true
   validates_email_format_of :email, :message => 'Please enter an appropriate email'
