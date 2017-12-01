@@ -2,26 +2,29 @@
 
 <div class="container-fluid">
   <div class="col-xs-12">
-    <div class="row" id="charts">
-      <div class="col-lg-6">
-        <%= column_chart Company.where("user_id = #{current_user.id}").group_by_day(:created_at).count, ytitle: "Company record added" %>
-      </div>
-      <div class="col-lg-6">
-        <%= bar_chart Company.where("user_id = #{current_user.id}").group_by_day_of_week(:created_at, format: "%a").count, ytitle: "Most active DOWs", colors: ["pink"] %>
-      </div>
-    </div>
-  </div>
+    <div id ="dashboard"> DASHBOARD</div>
     <div class="row" id="lists">
-      <div class="col-lg-8" id ="company">
-
-         <%=render 'progress'%>
-
+      <div class="col-lg-4">
       </div>
-      <div class="col-lg-4" id="tasks">
- <%= link_to "New Task", tasks_path%>
+      <div class="col-lg-8" id='company'>
+        <%=render 'progress'%>
+      </div>
+
+  <div class="row" id="charts">
+      <div class="col-lg-4" id="bar">
+        <%= column_chart Company.where("user_id = #{current_user.id}").group_by_day(:created_at).count, ytitle: "Company record added", colors:["#d19b2e"] %>
+      </div>
+
+      <div class="col-lg-4" id="bar2">
+        <%= bar_chart Company.where("user_id = #{current_user.id}").group_by_day_of_week(:created_at, format: "%a").count, ytitle: "Most active DOWs", colors: ["#d19b2e"] %>
+      </div>
+       <div class="col-lg-4" id="tasks">
+        <%= link_to "New Task", tasks_path%>
         <%current_user.tasks.each do |task|%>
-          <h1><%=task.subject%></h1>
+        <div class = "taskbackground">
+          <h3><%=task.subject%></h3>
           <p><%=task.details%></p>
+        </div>
           <%=link_to task_edit_path(task.id) do%>
           <span class="glyphicon glyphicon-pencil"></span>
           <%end%>
@@ -30,6 +33,32 @@
           <%end%>
           <%end%>
       </div>
-    </div>
+
+
+
+
+
+
+
+
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
