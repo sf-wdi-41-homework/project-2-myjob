@@ -34,10 +34,11 @@
 				<%found=false%>
 				<%current_user.tasks.each do |task|%>
   					<%if task.company == @company.company_name%>
-    					<p><%=task.subject%></p>
+    					<p><%=task.subject%>
     					<%if task.details!="" %>
-    						<p><%=task.details%></p>
+    						-- <%=task.details%>
     					<%end%>
+    					</p>
     					<%found=true%>
   					<%end%>
   				<%end%>
