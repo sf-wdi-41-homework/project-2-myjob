@@ -45,4 +45,7 @@ Rails.application.routes.draw do
   get '/profile/document/download/:id', to: 'documents#show', as:"document_download"
   delete '/profile/document/download/:id', to: 'documents#destroy'
 
+  #about page
+  get '/about', to: 'about#index', as: "about"
+
 end
