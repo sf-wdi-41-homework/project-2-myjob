@@ -1,5 +1,5 @@
 h1,h2,h3,h4 {
-	font-family: 'PT Mono', monospace; 
+	font-family: 'PT Mono', monospace;
 }
 
 nav {
@@ -10,7 +10,7 @@ nav {
 footer {
   background-color: black;
   text-align: center;
-	
+
 }
 
 .quotes h3 {
@@ -44,7 +44,7 @@ li:not(:last-child) {
 
 .progress_bar {
   background-color: #7b99c1;
-  height: 5vh;
+  height: 4vh;
 }
 
 .sorry {
@@ -63,10 +63,9 @@ body {
     text-align:center;
     font-weight:bolder;
     font-size: 4vw;
-    text-shadow: 2px 2px black;  
-    background-image: url("/jumbotron.jpg"); 
-    background-position: center center; 
-    opacity: 0.5; 
+    text-shadow: 2px 2px black;
+    background-image: url("/jumbotron.jpg");
+    background-position: center center;
+    opacity: 0.5;
     box-shadow: 1px 1px 3px #b3b3b3;
 }
-
