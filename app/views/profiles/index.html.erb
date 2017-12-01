@@ -2,11 +2,13 @@
   <div class="row">
     <div class="col-xs-12" id= "dashboard">
      <%=@profile.full_name%>'s Profile
+     <%= link_to profile_path(@profile.id) do%>
+       <i class="fa fa-pencil" aria-hidden="true"></i>
+     <%end%>
 
     </div>
   </div>
 
-    <%= link_to "EDIT", profile_path(@profile.id)%>
 <div class="row">
   <div class="col-xs-6">
     <div style="margin-top: 20px;" class="container-fluid">
@@ -26,7 +28,22 @@
         </div>
         <div class="profileField">
           <%=link_to @profile.linkin_url do %>
-            <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+            <i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
+          <%end%>
+          <%if @profile.twitter != ""%>
+            <%=link_to @profile.twitter do%>
+              <i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i>
+            <%end%>
+          <%end%>
+          <%if @profile.github != ""%>
+            <%=link_to @profile.github do%>
+              <i class="fa fa-github-square fa-3x" aria-hidden="true"></i>
+            <%end%>
+          <%end%>
+          <%if @profile.personalweb != ""%>
+            <%=link_to @profile.personalweb do%>
+              <i class="fa fa-chrome fa-3x" aria-hidden="true"></i>
+            <%end%>
           <%end%>
         </div>
       </div>
@@ -34,7 +51,7 @@
   </div>
      <!--row-->
 
-  <div class="col-xs-6" id="logos">
+  <div class="col-xs-6 profileField" id="logos">
     <%=render '/documents/new'%>
   </div>
 </div>

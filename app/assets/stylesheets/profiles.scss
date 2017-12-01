@@ -10,13 +10,14 @@
 /*	background-image: url("/jumbotron.jpg"); */
     background-repeat: no-repeat;
     background-size: auto;
-    background-position: center top; 
+    background-position: center top;
 /*  opacity: 0.5; */
     box-shadow: 1px 1px 3px #b3b3b3;
 }
 
 #square, #envelope, #card {
 	text-align:center;
+  size: 1vw;
 }
 
 #number, #email, #address {
@@ -29,7 +30,7 @@
 	font-size: 1.5vw;
 /*	text-shadow: 2px 2px black;    */
 
-	
+
 }
 
 #square, #envelope, #card {
@@ -54,8 +55,9 @@
 }
 
 .profileField {
-	font-size: 24px; 
-	background-color: rgba(240,240,240,0.7);	
+	font-size: 1vw;
+	background-color: rgba(240,240,240,0.7);
+  margin-bottom: 3vh;
 }
 
 #number {
@@ -70,7 +72,7 @@
 	background-image: url("/email.png");
     background-repeat: no-repeat;
     background-size: auto;
-    background-position: center bottom; 
+    background-position: center bottom;
 /*    opacity: 0.3;  */
 }
 
@@ -85,7 +87,7 @@
 
 #avatar {
 	background-color:blue;
-	padding: 0px 0px 250px 0px;	
+	padding: 0px 0px 250px 0px;
 }
 
 #avatar{
@@ -102,11 +104,21 @@
 	padding-bottom: 50px;
 	margin-top: 50px;
 	box-shadow: 1px 1px 1px #b3b3b3;
-  background-position: center middle; 
+  background-position: center middle;
   opacity: 0.6;
 
 }
 
 #dashboard{
 	margin-bottom: 10px;
+}
+
+.documentImg{
+  width: 70%;
+  height: auto;
+}
+
+.uploadBtn{
+  max-width: 100%;
+  font-size:1vw;
 }
