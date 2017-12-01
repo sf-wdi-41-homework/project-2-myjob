@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12" id= "name"> 
+    <div class="col-xs-12" id= "name">
      <%=@profile.full_name%>'s Profile
 
     </div>
@@ -9,32 +9,35 @@
     <%= link_to "EDIT", profile_path(@profile.id)%>
 
   <div class="row">
-    <div class="col-xs-4" id ="number">
+    <div class="col-xs-3" id ="number">
       <div class="profileField">
         <a id="square" class="fa phone-square fa-phone-square fa-2x" aria-label="linkedin"> </a>
         <%=@profile.phone_number%>
       </div>
     </div>
-    <div class="col-xs-4" id ="email">
+    <div class="col-xs-3" id ="email">
       <div class="profileField">
         <a id="envelope" class="fa fa-envelope fa-2x" aria-label="linkedin"> </a>
         <%=@profile.email%>
       </div>
     </div>
-    <div class="col-xs-4" id ="address">
+    <div class="col-xs-3" id ="address">
       <div class="profileField">
         <a id="card" class="fa fa-address-card fa-2x" aria-label="linkedin"> </a>
         <%=@profile.address%>
       </div>
     </div>
+    <div class="col-xs-3">
+      <div class="profileField">
+        <%=link_to @profile.linkin_url do%>
+        <img src="/linkedin.png" height="60"/>
+        <%end%>
+      </div>
+    </div>
   </div>    <!--row-->
 
   <div class="row" id="logos">
-    <div class="col-xs-4 col-xs-offset-4">
-      <img src="/resume.png" height="120"/>
-      <img src="/linkedin.png" height="120"/>
-      <img src="/documents.png" height="120"/>
-    </div>
+    <%=render '/documents/new'%>
   </div>
 
   <!--
@@ -51,6 +54,3 @@
   </div>    -->
 
 </div>    <!--container-->
-
-
-
