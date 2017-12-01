@@ -12,6 +12,9 @@ class ProfilesController < ApplicationController
   end
 
   def new
+    if current_user.profile
+      redirect_to my_profile_path
+    end
   end
 
   def edit
@@ -24,7 +27,7 @@ class ProfilesController < ApplicationController
       flash[:success] = "You have created your profile"
       redirect_to my_profile_path
     else
-      flash[:error] = "Please try again"
+      flash[:error] = @profile.errors.full_messages[0]
       redirect_to new_profile_path
     end
   end
@@ -34,8 +37,8 @@ class ProfilesController < ApplicationController
       flash[:success] = "Successfully updated profile!"
       redirect_to my_profile_path
     else
-      flash[:error] = "Update failed"
-      redirect_to my_profile_path
+      flash[:error] = @profile.errors.full_messages[0]
+      redirect_to profile_path
     end
   end
 end
