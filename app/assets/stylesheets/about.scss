@@ -3,18 +3,26 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .portrait {
-/*	height: 230px; */
 	border-radius: 20%;
+	max-width: 100%;
+	height: 25vh;
+
 }
 
 .abouttext {
-	font-size: 24px;	
+	font-size: 2.5vw;	
 	font-family: 'Ubuntu', monospace;
 	margin: 15px;
 }
 
 .biotext {
-	font-size: 20px;
+	font-size: 1.5vw;
 	font-family: 'Ubuntu', monospace;
 	margin-top: 15px;
+}
+
+#responsive {
+	max-width: 100;
+	height: 25vh;
+
 }
