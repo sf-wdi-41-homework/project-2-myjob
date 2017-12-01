@@ -1,16 +1,52 @@
 
-<%=link_to "Update Status", edit_company_path(@company.id)%></br>
-<%=link_to "Delete", company_path(@company.id), method: :delete%></br>
-<%=@company.company_name%> </br>
-<%=@company.progress%> </br>
-<%=@company.postitions_reference%> </br>
-<%=@company.contact1%> </br>
-<%=@company.contact2%> </br>
-<%=@company.contact3%> </br>
-<h2> Task List</h2>
-<%current_user.tasks.each do |task|%>
-  <%if task.company == @company.company_name%>
-    <h4><%=task.subject%></h4>
-    <p><%=task.details%></p>
-  <%end%>
-<%end%>
+
+<h1>Summary of <%=@company.company_name%> </h1>
+
+<div class ="container-fluid">
+  	<div class="row">
+    	<div class="col-sm-6 col-sm-offset-3">
+      		<h2>Company Profile</h2>
+      		<div class="abouttext">
+      			<table>
+					<tr><td><strong>Name:</strong>&nbsp;</td> 
+					<td><%=@company.company_name%></td></tr>
+					<tr><td><strong>Progress:</strong>&nbsp;</td>
+					<td><%=@company.progress%></td></tr>
+					<tr><td><strong>Positions:</strong>&nbsp;</td>
+					<td><%=@company.postitions_reference%></td></tr>
+					<tr><td><strong>Contact #1:</strong>&nbsp;</td>
+					<td><%=@company.contact1%></td></tr>
+					<tr><td><strong>Contact #2:</strong>&nbsp;</td>
+					<td><%=@company.contact2%></td></tr>
+					<tr><td><strong>Contact #3:</strong>&nbsp;</td>
+					<td><%=@company.contact3%></td></tr>
+				</table>
+	  		</div>
+	 		<%=link_to "Update Status", edit_company_path(@company.id)%>&nbsp;&nbsp;
+	 		<%=link_to "Delete", company_path(@company.id), method: :delete%></br>
+		</div>
+  	</div> 	<!--row-->
+
+  	<div class="row">
+    	<div class="col-sm-6 col-sm-offset-3">
+			<h2>Associated Tasks</h2>
+			<div class="abouttext">
+				<%found=false%>
+				<%current_user.tasks.each do |task|%>
+  					<%if task.company == @company.company_name%>
+    					<p><%=task.subject%></p>
+    					<%if task.details!="" %>
+    						<p><%=task.details%></p>
+    					<%end%>
+    					<%found=true%>
+  					<%end%>
+  				<%end%>
+  				<%if found==false%>
+  					<h4>No tasks found for this company</h4>
+  				<%end%>
+  			</div>
+  		</div>
+  	</div>	<!--row-->
+
+</div>		<!--container-->
+
