@@ -12,6 +12,9 @@ class ProfilesController < ApplicationController
   end
 
   def new
+    if current_user.profile
+      redirect_to my_profile_path
+    end
   end
 
   def edit

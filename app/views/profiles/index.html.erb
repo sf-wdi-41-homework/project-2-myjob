@@ -1,8 +1,8 @@
 <div class="container">
   <div class="col-xs-12">
 
-    
-    <div class="col-xs-12" id= "name"> 
+
+    <div class="col-xs-12" id= "name">
      <%=@profile.full_name%>
     </div>
       <%= link_to "EDIT", profile_path(@profile.id)%>
@@ -14,7 +14,7 @@
        2 of 4
       </div>
       <div class="col-xs-5" id ="linkedin">
-        3 of 4
+        <%=render "/documents/new"%>
       </div>
       <div class="col-xs-1">
 
@@ -41,6 +41,3 @@
 
   </div>
 </div>
-
-
-
