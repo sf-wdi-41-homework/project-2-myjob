@@ -1,4 +1,6 @@
 class DocumentsController < ApplicationController
+  before_action :authentication
+  
   def new
     @document = Document.new
   end

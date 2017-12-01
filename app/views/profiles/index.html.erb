@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
     <div class="col-xs-12" id= "name">
      <%=@profile.full_name%>'s Profile
@@ -7,38 +7,37 @@
   </div>
 
     <%= link_to "EDIT", profile_path(@profile.id)%>
+<div class="row">
+  <div class="col-xs-6">
+    <div style="margin-top: 20px;" class="container-fluid">
+      <div class="row col-xs-6 col-xs-offset-3">
+        <div class="profileField">
+          <a id="square" class="fa phone-square fa-phone-square fa-2x" aria-label="linkedin"> </a>
+          <%=@profile.phone_number%>
+        </div>
 
-  <div class="row">
-    <div class="col-xs-3" id ="number">
-      <div class="profileField">
-        <a id="square" class="fa phone-square fa-phone-square fa-2x" aria-label="linkedin"> </a>
-        <%=@profile.phone_number%>
+        <div class="profileField">
+          <a id="envelope" class="fa fa-envelope fa-2x" aria-label="linkedin"> </a>
+          <%=@profile.email%>
+        </div>
+        <div class="profileField">
+          <a id="card" class="fa fa-address-card fa-2x" aria-label="linkedin"> </a>
+          <%=@profile.address%>
+        </div>
+        <div class="profileField">
+          <%=link_to @profile.linkin_url do %>
+            <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+          <%end%>
+        </div>
       </div>
     </div>
-    <div class="col-xs-3" id ="email">
-      <div class="profileField">
-        <a id="envelope" class="fa fa-envelope fa-2x" aria-label="linkedin"> </a>
-        <%=@profile.email%>
-      </div>
-    </div>
-    <div class="col-xs-3" id ="address">
-      <div class="profileField">
-        <a id="card" class="fa fa-address-card fa-2x" aria-label="linkedin"> </a>
-        <%=@profile.address%>
-      </div>
-    </div>
-    <div class="col-xs-3">
-      <div class="profileField">
-        <%=link_to @profile.linkin_url do%>
-        <img src="/linkedin.png" height="60"/>
-        <%end%>
-      </div>
-    </div>
-  </div>    <!--row-->
+  </div>
+     <!--row-->
 
-  <div class="row" id="logos">
+  <div class="col-xs-6" id="logos">
     <%=render '/documents/new'%>
   </div>
+</div>
 
   <!--
   <div class="row">
