@@ -1,5 +1,5 @@
 h1,h2,h3 {
-	font-family: 'PT Mono', monospace; 
+	font-family: 'PT Mono', monospace;
 }
 
 nav {
@@ -10,6 +10,7 @@ nav {
 footer {
   background-color: black;
   text-align: center;
+	
 }
 
 .quotes h3 {
@@ -49,4 +50,3 @@ li:not(:last-child) {
   background-color: black;
   height: 5vh;
 }
-
