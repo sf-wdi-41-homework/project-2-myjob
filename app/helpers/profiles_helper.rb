@@ -1,6 +1,6 @@
 module ProfilesHelper
   def profile_params
-    params.require(:profile).permit(:full_name, :phone_number, :email, :address)
+    params.require(:profile).permit(:full_name, :phone_number, :email, :address, :linkin_url)
   end
 
   def profile_params_id
