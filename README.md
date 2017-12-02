@@ -15,12 +15,18 @@ Profile page: The profile page allows user to read or edit the fields including 
 
 About page: This page overviews the application and shows mini bios of the creation team together with their pictures.
 
-## List of Tools/Gems Needed
+## List of Special Tools/Gems Used
 - Bcrypt
 - Chartkick
 - Groupdate
 - Google Fonts
 - Several others
+
+## Things Still to Do
+- If no companies or tasks have been added on a new dashboard page, it may not be clear to the user what those sections are
+- Adding company should give an error if it has already been added, for that user only.
+- Need to support a company status of "added" on the dashboard page
+- Completed tasks should no longer appear
 
 ## TEAMWORK PLAN
 Work will be divided based on plan layed out by Trello and we will approached it day by day as a team. 
