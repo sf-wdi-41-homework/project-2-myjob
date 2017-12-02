@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12" id= "dashboard">
-     <%=@profile.full_name%>'s Profile
+     <%=@profile.full_name.upcase%>'S PROFILE
      <%= link_to profile_path(@profile.id) do%>
        <i class="fa fa-pencil" aria-hidden="true"></i>
      <%end%>
