@@ -1,5 +1,5 @@
 
-<div class ="container-fluid">
+<div class ="container-fluid" id="aboutPage">
 	<div class = "header">
 		<%= image_tag("/jumbotron.jpg", :class => "jumbotron") %>
 		<div class = "words">
@@ -20,10 +20,10 @@
         <li>Keep track of all the tasks involved in your search: reminders to update documents and social pages, follow-ups with companies and, importantly, tasks about keeping up with your network (coffees, etc).</li>
         <li>At a glance, see how many companies you've added to your search day-by-day.  See what are your most productive days of the week.</li>
       </ul></h4>
-    </div> 
+    </div>
   </div>
-  
-  
+
+
   <br/>
 
   <div class="row quotes">
@@ -39,7 +39,9 @@
 
   <div class="row salesPitch">
     <div class="col-sm-8 col-sm-offset-2">
+			<%=link_to signup_path do%>
       <h2>Sign-up today!</h2>
+			<%end%>
     </div>
   </div>
 

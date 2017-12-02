@@ -1,7 +1,13 @@
 <div class="row" id="stat">
   <div class="col-xs-2">
     <div class="progressTitle">
-          <%= link_to "New Company", companies_path%>
+      <%if current_user.companies == []%>
+        <%= link_to "Add Company", companies_path%>
+      <%else%>
+          <%= link_to companies_path do%>
+            <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
+          <%end%>
+      <%end%>
     </div class="progressTitle">
   </div>
   <div class="col-xs-8">
@@ -39,8 +45,13 @@
     </div>
   </div>
 </div>
-<%@companies.each do |company|%>
   <div class="row" style="height:7vh;">
+    <%if current_user.companies == []%>
+      <%= link_to companies_path do%>
+        <h2>Click to Add Company</h2>
+      <%end%>
+    <%end%>
+    <%@companies.each do |company|%>
     <div class="col-xs-2">
       <div class="progressTitle">
         <%=link_to company_path(company.id) do%>
@@ -145,5 +156,5 @@
       <% end %>
     </div>
     <%end%>
+    <%end%>
   </div>
-<%end%>
