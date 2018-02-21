@@ -1,23 +1,23 @@
 
-    <div id ="dashboard">Summary of <%=@company.company_name%></div>
+    <div id ="dashboard">SUMMARY OF <%=@company.company_name.upcase%></div>
 
 <div class ="container-fluid">
   	<div class="row">
     	<div class="col-sm-6 col-sm-offset-3">
       		<h2>Company Profile</h2>
       		<div class="abouttext">
-      			<table>
-					<tr><td><strong>Name:</strong>&nbsp;</td> 
+      		<table>
+					<tr><td><strong>Name:</strong>&nbsp;</td>
 					<td><%=@company.company_name%></td></tr>
 					<tr><td><strong>Progress:</strong>&nbsp;</td>
 					<td><%=@company.progress%></td></tr>
-					<tr><td><strong>Positions:</strong>&nbsp;</td>
+					<tr><td><strong>Position Applied:</strong>&nbsp;</td>
 					<td><%=@company.postitions_reference%></td></tr>
-					<tr><td><strong>Contact #1:</strong>&nbsp;</td>
+					<tr><td><strong>Contact Information:</strong>&nbsp;</td>
 					<td><%=@company.contact1%></td></tr>
-					<tr><td><strong>Contact #2:</strong>&nbsp;</td>
+					<tr><td><strong>Referral(Yes or No):</strong>&nbsp;</td>
 					<td><%=@company.contact2%></td></tr>
-					<tr><td><strong>Contact #3:</strong>&nbsp;</td>
+					<tr><td><strong>Link to Job Description:</strong>&nbsp;</td>
 					<td><%=@company.contact3%></td></tr>
 				</table>
 	  		</div>
@@ -33,20 +33,19 @@
 				<%found=false%>
 				<%current_user.tasks.each do |task|%>
   					<%if task.company == @company.company_name%>
-    					<p><%=task.subject%>
+    					<strong><%=task.subject%>
     					<%if task.details!="" %>
     						-- <%=task.details%>
     					<%end%>
-    					</p>
+            </strong>
     					<%found=true%>
   					<%end%>
   				<%end%>
   				<%if found==false%>
-  					<h4>No tasks found for this company</h4>
+  					<strong>No tasks found for this company</strong>
   				<%end%>
   			</div>
   		</div>
   	</div>	<!--row-->
 
 </div>		<!--container-->
-

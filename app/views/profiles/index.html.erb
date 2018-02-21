@@ -1,16 +1,29 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12" id= "dashboard">
-     <%=@profile.full_name%>'s Profile
+     <%=@profile.full_name.upcase%>'S PROFILE
+     <%= link_to profile_path(@profile.id) do%>
+       <i class="fa fa-pencil" aria-hidden="true"></i>
+     <%end%>
 
     </div>
   </div>
 
-    <%= link_to "EDIT", profile_path(@profile.id)%>
 <div class="row">
+  <div class="col-xs-5 col-xs-offset-1 profileField" id="logos">
+    <%=render '/documents/new'%>
+  </div>
+  <!--row-->
   <div class="col-xs-6">
     <div style="margin-top: 20px;" class="container-fluid">
-      <div class="row col-xs-6 col-xs-offset-3">
+      <div class="row col-xs-6 col-xs-offset-3" id= "infos">
+            <h4>USE THIS PAGE TO KEEP TRACK OF All YOUR IMPORTANT DOCUMENTS. SELECT AND UPLOAD TO HAVE YOUR FILES AT ALL TIMES.</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-6">
+    <div style="margin-top: 20px;" class="container-fluid">
+      <div class="row col-xs-6 col-xs-offset-3" id= "infos">
         <div class="profileField">
           <a id="square" class="fa phone-square fa-phone-square fa-2x" aria-label="linkedin"> </a>
           <%=@profile.phone_number%>
@@ -24,32 +37,41 @@
           <a id="card" class="fa fa-address-card fa-2x" aria-label="linkedin"> </a>
           <%=@profile.address%>
         </div>
-        <div class="profileField">
+      </div>
+    </div>
+  </div>
+
+   <div class="col-xs-6">
+    <div style="margin-top: 20px;" class="container-fluid">
+      <div class="row col-xs-6 col-xs-offset-3" id= "socials">
+      
+        <div class="profileField2">
           <%=link_to @profile.linkin_url do %>
-            <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+            <i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
+          <%end%>
+          <%if @profile.twitter != ""%>
+            <%=link_to @profile.twitter do%>
+              <i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i>
+            <%end%>
+          <%end%>
+          <%if @profile.github != ""%>
+            <%=link_to @profile.github do%>
+              <i class="fa fa-github-square fa-3x" aria-hidden="true"></i>
+            <%end%>
+          <%end%>
+          <%if @profile.personalweb != ""%>
+            <%=link_to @profile.personalweb do%>
+              <i class="fa fa-chrome fa-3x" aria-hidden="true"></i>
+            <%end%>
           <%end%>
         </div>
       </div>
     </div>
   </div>
-     <!--row-->
 
-  <div class="col-xs-6" id="logos">
-    <%=render '/documents/new'%>
-  </div>
+
+
 </div>
 
-  <!--
-  <div class="row">
-      <div class="col-xs-4" id ="avatar">
-       LinkedIn
-      </div>
-      <div class="col-xs-4" id ="linkedin">
-        Other social
-      </div>
-      <div class="col-xs-4" id ="linkedin">
-        Updated document
-      </div>
-  </div>    -->
 
 </div>    <!--container-->

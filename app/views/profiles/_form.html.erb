@@ -7,20 +7,35 @@
 </div>
 <div class="form-group">
 		<%= form.label :phone_number, "Phone Number:" %>
-		<%= form.text_field(:phone_number, class: 'form-control', required: true) %>
+		<%= form.text_field(:phone_number, class: 'form-control', required: true, placeholder: "US Phone Number Only! Add country code 1-") %>
 </div>
 <div class="form-group">
 		<%= form.label :email, "Email:" %>
 		<%= form.text_field(:email, class: 'form-control', required: true) %>
 </div>
 <div class="form-group">
+		<%= form.label :address, "Mailing Address:" %>
+		<%= form.text_field(:address, class: 'form-control', required: true) %>
+</div>
+<div class="form-group">
 		<%= form.label :linkin_url, "LinkedIn URL:" %>
 		<%= form.text_field(:linkin_url, class: 'form-control', required: true) %>
 </div>
 <div class="form-group">
-		<%= form.label :address, "Mailing Address:" %>
-		<%= form.text_field(:address, class: 'form-control', required: true) %>
+		<%= form.label :github, "GitHub URL:" %>
+		<%= form.text_field(:github, class: 'form-control', placeholder:"Optional") %>
 </div>
+<div class="form-group">
+		<%= form.label :twitter, "Twitter URL:" %>
+		<%= form.text_field(:twitter, class: 'form-control', placeholder:"Optional") %>
+</div>
+
+<div class="form-group">
+		<%= form.label :personalweb, "Personal Website URL:" %>
+		<%= form.text_field(:personalweb, class: 'form-control', placeholder:"Optional") %>
+</div>
+
+
 
 <div class="form-group">
 		<%= form.submit('Submit', class: 'btn-sm btn-primary') %>
