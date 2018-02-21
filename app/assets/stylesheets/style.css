@@ -21,6 +21,7 @@ footer {
 .salesPitch h2 {
 	text-align: center;
 	background-color: #FFE4B5;
+  box-shadow: 1px 1px 3px #b3b3b3;
 /*	font-family: 'Ubuntu', monospace; */
 }
 
@@ -67,5 +68,10 @@ body {
     background-image: url("/jumbotron.jpg");
     background-position: center center;
     opacity: 0.5;
+    box-shadow: 1px 1px 3px #b3b3b3;
+}
+
+#aboutApp {
+    background-color: white;
     box-shadow: 1px 1px 3px #b3b3b3;
 }
