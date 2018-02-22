@@ -1,3 +1,124 @@
-// Place all the styles related to the profiles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#name,#dashboard, h1 {
+  font-family: 'PT Mono', monospace;
+	color:white;
+	background-color: #a4c5dc;
+	text-align:center;
+	font-weight:bolder;
+	font-size: 4vw;
+/*	text-shadow: 2px 2px black;  */
+/*	background-image: url("/jumbotron.jpg"); */
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center top;
+/*  opacity: 0.5; */
+    box-shadow: 1px 1px 3px #b3b3b3;
+}
+
+#square, #envelope, #card {
+	text-align:center;
+  size: 1vw;
+}
+
+#number, #email, #address {
+	color:black;
+	text-align: center;
+	background-color: #b3b3b3;
+	border: 2px solid #d5d5d5;
+	margin: 40px 0px;
+	padding:40px 0px;
+	font-size: 1.5vw;
+/*	text-shadow: 2px 2px black;    */
+
+
+}
+
+#square, #envelope, #card {
+	text-align:center;
+
+}
+
+#avatar{
+	background-color: white;
+	border: 2px solid #efefef;
+	padding-bottom: 250px;
+	margin-top: 100px;
+	box-shadow: 1px 1px 3px #b3b3b3;
+}
+
+#linkedin{
+	background-color: white;
+	border: 2px solid #efefef;
+	padding-bottom: 250px;
+	margin-top: 100px;
+	box-shadow: 1px 1px 1px #b3b3b3;
+}
+
+.profileField {
+	font-size: 1vw;
+	background-color: rgba(240,240,240,0.7);
+  margin-bottom: 3vh;
+}
+
+#number {
+	background-image: url("/phone.jpg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center center;
+/*    opacity: 0.3;  */
+}
+
+#email {
+	background-image: url("/email.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center bottom;
+/*    opacity: 0.3;  */
+}
+
+#address {
+	background-image: url("/light.jpg");
+    background-repeat: no-repeat;
+    background-size: auto;
+/*    opacity: 0.3;  */
+}
+
+/* ------------------ */
+
+#avatar {
+	background-color:blue;
+	padding: 0px 0px 250px 0px;
+}
+
+#avatar{
+	background-color: white;
+	border: 2px solid #d5d5d5;
+	padding-bottom: 50px;
+	margin-top: 50px;
+	box-shadow: 1px 1px 3px #b3b3b3;
+}
+
+#linkedin{
+	background-color: white;
+	border: 2px solid #d5d5d5;
+	padding-bottom: 50px;
+	margin-top: 50px;
+	box-shadow: 1px 1px 1px #b3b3b3;
+  background-position: center middle;
+  opacity: 0.6;
+
+}
+
+#dashboard{
+	margin-bottom: 10px;
+}
+
+.documentImg{
+  width: 70%;
+  height: auto;
+}
+
+.uploadBtn{
+  max-width: 100%;
+  font-size:1vw;
+}

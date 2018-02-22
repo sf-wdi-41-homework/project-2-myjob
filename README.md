@@ -1,24 +1,34 @@
-# README
+# MY JOB SEARCH
+## Project Description
+My Job Search provides a set of tools for people searching for a job. Organize your job search and track your progress in one convenient location.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## MVP Features
+User signs up or logs in into website from the landing page. When signing up the user needs to give username and password. After signing up or logging in, the user is redirected to the dashboard page.
 
-Things you may want to cover:
+Dashboard page contains two informational graphs to show the user's progress at a glance.  One graph shows the number of company profiles added per day (including which days where nothing was added) as well as a graph to show activity by days of the week.  Next, there is a list of companies the user has created, with a status bar, and when clicked will redirect to the company page. From this section of the page, the user can add a company or editLastly, there is a task list.  This can be used to record any tasks the user is interested in.  For the user's convenience, when a company profile is create, a task is automatically created to help the user track his or her activities with that company.
 
-* Ruby version
+On top navigation bar, there is a profile button that will redirect to profile page and a sign out button to log user out.  Lastly
 
-* System dependencies
+Company page: Will show the name of the company, progress status, positions that the user is tracking and up to three contacts where the user can track names, phone numbers, email addresses, etc. This page also show all tasks associated with this company.  The company profile can be edited or deleted.
 
-* Configuration
+Profile page: The profile page allows user to read or edit the fields including phone number, email and address. The user can also upload various documents including resume.  
 
-* Database creation
+About page: This page overviews the application and shows mini bios of the creation team together with their pictures.
 
-* Database initialization
+## List of Special Tools/Gems Used
+- Bcrypt
+- Chartkick
+- Groupdate
+- Google Fonts
+- Several others
 
-* How to run the test suite
+## Things Still to Do
+- If no companies or tasks have been added on a new dashboard page, it may not be clear to the user what those sections are
+- Adding company should give an error if it has already been added, for that user only.
+- Need to support a company status of "added" on the dashboard page
+- Completed tasks should no longer appear
 
-* Services (job queues, cache servers, search engines, etc.)
+## TEAMWORK PLAN
+Work will be divided based on plan layed out by Trello and we will approached it day by day as a team. 
+* [Trello](https://trello.com/b/cc6Od5W5/my-job-search)
 
-* Deployment instructions
-
-* ...

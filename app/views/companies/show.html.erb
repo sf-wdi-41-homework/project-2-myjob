@@ -1,0 +1,51 @@
+
+    <div id ="dashboard">SUMMARY OF <%=@company.company_name.upcase%></div>
+
+<div class ="container-fluid">
+  	<div class="row">
+    	<div class="col-sm-6 col-sm-offset-3">
+      		<h2>Company Profile</h2>
+      		<div class="abouttext">
+      		<table>
+					<tr><td><strong>Name:</strong>&nbsp;</td>
+					<td><%=@company.company_name%></td></tr>
+					<tr><td><strong>Progress:</strong>&nbsp;</td>
+					<td><%=@company.progress%></td></tr>
+					<tr><td><strong>Position Applied For:</strong>&nbsp;</td>
+					<td><%=@company.postitions_reference%></td></tr>
+					<tr><td><strong>Link to Job Description:</strong>&nbsp;</td>
+					<td><%=@company.contact1%></td></tr>
+					<tr><td><strong>Contact Info:</strong>&nbsp;</td>
+					<td><%=@company.contact2%></td></tr>
+					<tr><td><strong>Contact Info Position:</strong>&nbsp;</td>
+					<td><%=@company.contact3%></td></tr>
+				</table>
+	  		</div>
+	 		<%=link_to "Update Status", edit_company_path(@company.id)%>&nbsp;&nbsp;
+	 		<%=link_to "Delete", company_path(@company.id), method: :delete%></br>
+		</div>
+  	</div> 	<!--row-->
+
+  	<div class="row">
+    	<div class="col-sm-6 col-sm-offset-3">
+			<h2>Associated Tasks</h2>
+			<div class="abouttext">
+				<%found=false%>
+				<%current_user.tasks.each do |task|%>
+  					<%if task.company == @company.company_name%>
+    					<strong><%=task.subject%>
+    					<%if task.details!="" %>
+    						-- <%=task.details%>
+    					<%end%>
+            </strong>
+    					<%found=true%>
+  					<%end%>
+  				<%end%>
+  				<%if found==false%>
+  					<strong>No tasks found for this company</strong>
+  				<%end%>
+  			</div>
+  		</div>
+  	</div>	<!--row-->
+
+</div>		<!--container-->

@@ -1,17 +1,71 @@
+h1,h2,h3,h4 {
+	font-family: 'PT Mono', monospace;
+}
+
 nav {
   background-color: black;
+  font-family: 'Ubuntu', monospace;
+}
+
+footer {
+  background-color: black;
+  text-align: center;
+
+}
+
+.quotes h3 {
+	text-align: left;
+	font-family: 'Ubuntu', monospace;
+}
+
+.salesPitch h2 {
+	text-align: center;
+	background-color: #FFE4B5;
+/*	font-family: 'Ubuntu', monospace; */
+}
+
+#footer-text {
+	color: white;
+	margin: 15px;
+}
+
+body, p {
+	font-family: 'Ubuntu', monospace;
+
 }
 
 li a {
   color: white;
 }
 
+li:not(:last-child) {
+    margin-bottom: 5px;
+}
+
 .progress_bar {
-  background-color: palegreen;
-  height: 5vh;
+  background-color: #7b99c1;
+  height: 4vh;
 }
 
 .sorry {
   background-color: black;
   height: 5vh;
+}
+
+body {
+  background-color: #efefef;
+
+}
+
+#dashboard {
+  font-family: 'PT Mono', monospace;
+    color:white;
+    text-align:center;
+    font-weight:bolder;
+    font-size: 4vw;
+    text-shadow: 2px 2px black;
+    background-image: url("/jumbotron.jpg");
+    background-position: center center;
+    opacity: 0.5;
+    box-shadow: 1px 1px 3px #b3b3b3;
 }

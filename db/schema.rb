@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171127221328) do
+ActiveRecord::Schema.define(version: 20171201231629) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,17 @@ ActiveRecord::Schema.define(version: 20171127221328) do
     t.index ["user_id"], name: "index_companies_on_user_id"
   end
 
+  create_table "documents", force: :cascade do |t|
+    t.string "filename"
+    t.text "content_type"
+    t.binary "file_contents"
+    t.bigint "profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.index ["profile_id"], name: "index_documents_on_profile_id"
+  end
+
   create_table "profiles", force: :cascade do |t|
     t.string "full_name"
     t.string "phone_number"
@@ -36,7 +47,22 @@ ActiveRecord::Schema.define(version: 20171127221328) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "linkin_url"
+    t.string "github"
+    t.string "personalweb"
+    t.string "twitter"
     t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string "subject"
+    t.string "details"
+    t.string "status"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "company"
+    t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -44,8 +70,11 @@ ActiveRecord::Schema.define(version: 20171127221328) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "confirm_password"
   end
 
   add_foreign_key "companies", "users"
+  add_foreign_key "documents", "profiles"
   add_foreign_key "profiles", "users"
+  add_foreign_key "tasks", "users"
 end

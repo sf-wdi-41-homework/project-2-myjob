@@ -1,0 +1,49 @@
+<div style="margin-top: 20px;" class="container-fluid">
+<div class="row">
+<%= form_with scope: :document, url: documents_path, class: "form-horizontal" do |form| %>
+<div class="form-group">
+		<%= form.file_field(:file, required: true) %>
+</div>
+<div class="form-group">
+		<%= form.label :title, "File Type:" %>
+		<%= form.select :title, ['Resume', 'Cover Letter', 'Others'] %>
+</div>
+
+<div class="form-group">
+		<%= form.submit('Upload', class: 'btn btn-primary form uploadBtn') %>
+</div>
+<% end %>
+</div>
+<div class="row">
+<% current_user.profile.documents.each do |document|%>
+<div class="col-xs-4 profileField">
+	<div class="row">
+		<h4 class="float-left profileField"><%=document.title%>		</h4>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-5 ">
+			<%if document.title == "Resume"%>
+				<%=link_to document_download_path(document.id) do%>
+				<img class="documentImg" src="/resume.png" height="60"/>
+				<%end%>
+
+			<%elsif document.title == "Cover Letter"%>
+				<%=link_to document_download_path(document.id) do%>
+					<img class="documentImg" src="/resume.png" height="60"/>
+				<%end%>
+			<%elsif document.title == "Others"%>
+				<%=link_to document_download_path(document.id) do%>
+					<img class="documentImg" src="/documents.png" height="60"/>
+				<%end%>
+			<%end%>
+			<%=link_to document_download_path(document.id), method: :delete do%>
+			<span class="glyphicon glyphicon-trash pull-right"></span>
+			<%end%>
+		</div>
+	</div>
+
+</div>
+<%end%>
+</div>
+</div>

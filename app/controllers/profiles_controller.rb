@@ -1,24 +1,24 @@
 class ProfilesController < ApplicationController
+  before_action :profile_params_id, only: [:update, :edit, :destroy]
+  before_action :authentication
+
+
   def index
-    if !current_user
-      flash[:error] = "Please Login!"
-      redirect_to root_path
+    if current_user.profile
+      @profile = current_user.profile
     else
-      if current_user.profile
-        @profile = current_user.profile
-      else
-        redirect_to new_profile_path
-      end
+      redirect_to new_profile_path
     end
   end
 
   def new
-    if !current_user
-      flash[:error] = "Please Login!"
-      redirect_to root_path
-    else
-      @profile = Profile.new
+    if current_user.profile
+      redirect_to my_profile_path
     end
+  end
+
+  def edit
+
   end
 
   def create
@@ -27,8 +27,18 @@ class ProfilesController < ApplicationController
       flash[:success] = "You have created your profile"
       redirect_to my_profile_path
     else
-      flash[:error] = "Please try again"
+      flash[:error] = @profile.errors.full_messages[0]
       redirect_to new_profile_path
+    end
+  end
+
+  def update
+    if @profile.update(profile_params)
+      flash[:success] = "Successfully updated profile!"
+      redirect_to my_profile_path
+    else
+      flash[:error] = @profile.errors.full_messages[0]
+      redirect_to profile_path
     end
   end
 end
