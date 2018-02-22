@@ -17,7 +17,7 @@ class CompaniesController < ApplicationController
   def create
     @company = Company.new(company_params)
     if current_user.companies << @company
-      flash[:success] = "Congratz on applying to a new company!"
+      flash[:success] = "Congrats on applying to a new company!"
       redirect_to dashboard_path
     else
       flash[:error] = @company.errors.full_messages[0]
